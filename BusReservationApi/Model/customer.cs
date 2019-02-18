@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BusReservationApi.Model
 {
-    public class customer
+    public class Customer
     {
         public int Id { get; set; }
         public string Name { get; set; }
