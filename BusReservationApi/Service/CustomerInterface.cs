@@ -9,11 +9,11 @@ namespace BusReservationApi.Service
     interface CustomerInterface
     {
         IEnumerable<Customer> getAllCustomers();
-        Customer getCustomer(string id);
-        bool doesCustomerExist(string ig);
-        void createCustomer(Customer customer);
-        void updateCustomer(Customer customer);
-        void deleteCustomer(string id);
+        Customer getCustomer(int id);
+        //bool doesCustomerExist(string ig);
+        Customer createCustomer(Customer customer);
+        Customer updateCustomer(Customer customer);
+        bool deleteCustomer(int id);
         
     }
 }

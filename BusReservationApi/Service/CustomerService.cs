@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BusReservationApi.Model;
-using BusReservationApi.Controllers;
+//using BusReservationApi.Controllers;
 using BusReservationApi.DB;
 
 namespace BusReservationApi.Service
 {
-    public class CustomerService
+    public class CustomerService : CustomerInterface
     {
         CustomerDAO customerDAO = new CustomerDAO();
 
