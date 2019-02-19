@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using BusReservationApi.Model;
+using BusReservationApi.Service;
 
 namespace BusReservationApi.Controllers
 {
@@ -10,6 +12,14 @@ namespace BusReservationApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        CustomerService customerService = new CustomerService();
+        /*
+        [HttpGet("all")]
+        public IEnumerable<Customer> GetAllCustomers()
+        {
+            return customerService.getAllCustomers();
+        }
+        */
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
