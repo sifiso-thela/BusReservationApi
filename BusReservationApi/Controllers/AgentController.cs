@@ -22,6 +22,7 @@ namespace BusReservationApi.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
+<<<<<<< HEAD
         public Customer GetCustomer(string id)
         {
             return customerService.getCustomer(id);
@@ -42,6 +43,9 @@ namespace BusReservationApi.Controllers
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
+=======
+        public  Customer GetCustomer(int id)
+>>>>>>> 49c1e2150998980d6cfa62c130f61305f5c5f84b
         {
         }
     }

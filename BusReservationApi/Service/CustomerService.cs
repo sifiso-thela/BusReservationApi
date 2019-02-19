@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BusReservationApi.Model;
+using BusReservationApi.Controllers;
+using BusReservationApi.DB;
 
 namespace BusReservationApi.Service
 {
-    public class CustomerService : CustomerInterface
+    public class CustomerService
     {
+<<<<<<< HEAD
         private List<Customer> customers;
         /*
         private CustomerContext _context;
@@ -30,59 +33,44 @@ namespace BusReservationApi.Service
         public IEnumerable<Customer> getAllCustomers()
         {
             return customers;
+=======
+        CustomerDAO customerDAO = new CustomerDAO();
+
+        public IEnumerable<Customer> getAllCustomers()
+        {
+            return customerDAO.Get();
+>>>>>>> 49c1e2150998980d6cfa62c130f61305f5c5f84b
         }
 
-        public Customer getCustomer(string id)
+        public Customer getCustomer(int id)
         {
+<<<<<<< HEAD
               
            return customers.Where(cust => cust.Id == id).FirstOrDefault();
 
+=======
+            return customerDAO.Get(id);
+>>>>>>> 49c1e2150998980d6cfa62c130f61305f5c5f84b
         }
-
+        /*
         public bool doesCustomerExist(string id)
         { 
             return this.customers.Any(cust => cust.Id == id);
         }
-
-        public void createCustomer(Customer customer)
+        */
+        public Customer createCustomer(Customer customer)
         {
-            try
-            {
-                this.customers.Add(customer);
-            }catch(Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            
+            return customerDAO.CreateCustomer(customer);                        
         }
 
-        public void updateCustomer(Customer customer)
+        public Customer updateCustomer(Customer customer)
         {
-            try
-            {
-                var cust = this.getCustomer(customer.Id);
-                var index = this.customers.IndexOf(cust);
-
-                this.customers.RemoveAt(index);
-                this.customers.Insert(index, customer);
-            }catch(Exception e)
-            {
-                throw new Exception(e.Message);
-            }
+            return customerDAO.Update(customer);
         }
 
-        public void deleteCustomer(string id)
+        public bool deleteCustomer(int id)
         {
-            try
-            {
-                var cust = this.getCustomer(id);
-                var index = this.customers.IndexOf(cust);
-
-                this.customers.RemoveAt(index);
-            }catch(Exception e)
-            {
-                throw new Exception(e.Message);
-            }
+            return customerDAO.Delete(id);
         }
     }
 }

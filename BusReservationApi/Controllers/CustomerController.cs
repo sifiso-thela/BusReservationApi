@@ -24,7 +24,12 @@ namespace BusReservationApi.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
+<<<<<<< HEAD
         public Customer GetCustomer(string id)
+=======
+
+        public Customer getCustomer(int id)
+>>>>>>> 49c1e2150998980d6cfa62c130f61305f5c5f84b
         {
             return customerService.getCustomer(id);
         }
