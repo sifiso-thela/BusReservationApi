@@ -7,7 +7,7 @@ namespace BusReservationApi.Model
 {
     public class Trip
     {
-        public string id { get; set; }
+        public string Id { get; set; }
         public Bus  Bus { get; set; }
         public DateTime Time { get; set; }
         public DateTime Depature_time { get; set; }
