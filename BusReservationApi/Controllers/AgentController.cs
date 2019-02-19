@@ -13,7 +13,7 @@ namespace BusReservationApi.Controllers
     [ApiController]
     public class AgentController : ControllerBase
     {
-        CustomerService customersirvice;
+        CustomerService customersirvice=new CustomerService();
         [HttpGet("/all")]
         public IEnumerable<Customer> GetAllCustomers()
         {

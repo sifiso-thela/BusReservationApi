@@ -14,7 +14,7 @@ namespace BusReservationApi.Controllers
     [ApiController]
     public class CustomerController : Controller
     {
-        CustomerService customerService;
+        CustomerService customerService=new CustomerService();
 
         [HttpGet("all")]
         public IEnumerable<Customer> GetAllCustomers()
