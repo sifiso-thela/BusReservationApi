@@ -40,7 +40,7 @@ namespace BusReservationApi.Service
         {
             return customerDAO.Update(customer);
         }
-
+         
         public bool deleteCustomer(int id)
         {
             return customerDAO.Delete(id);
