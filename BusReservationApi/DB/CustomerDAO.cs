@@ -19,9 +19,11 @@ namespace BusReservationApi.DB
 
         public Customer CreateCustomer(Customer customer)
         {
+            Customer new_customer = new Customer();
             string query = string.Format("INSERT INTO customer {0}", GenerateInsertString(customer));
             MySqlDataReader mySqlDataReader = (MySqlDataReader) db.Query(query, "customer");
-            return customer;
+            new_customer = SetCustomers(mySqlDataReader)[0];
+            return new_customer;
         }
 
         public Customer Get(int id)
