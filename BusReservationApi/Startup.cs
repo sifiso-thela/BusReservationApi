@@ -30,6 +30,7 @@ namespace BusReservationApi
             services.AddDbContext<CustomerContext>(opt =>
                 opt.UseInMemoryDatabase("CustomerList"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +47,9 @@ namespace BusReservationApi
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            //app.UseSwaggerGen();
+            app.UseSwaggerUI();
         }
     }
 }
