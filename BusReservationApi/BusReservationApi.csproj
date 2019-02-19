@@ -12,9 +12,6 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
-<<<<<<< HEAD
-    <PackageReference Include="MySql.Data" Version="6.7.9" />
-=======
     <PackageReference Include="MySql.Data" Version="8.0.15" />
   </ItemGroup>
 
@@ -22,7 +19,6 @@
     <Reference Include="MySql.Data">
       <HintPath>references\MySql.Data.dll</HintPath>
     </Reference>
->>>>>>> 49c1e2150998980d6cfa62c130f61305f5c5f84b
   </ItemGroup>
 
 </Project>
