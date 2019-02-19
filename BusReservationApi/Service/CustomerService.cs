@@ -8,7 +8,7 @@ using BusReservationApi.DB;
 
 namespace BusReservationApi.Service
 {
-    public class CustomerService
+    public class CustomerService : CustomerInterface
     {
         CustomerDAO customerDAO = new CustomerDAO();
 
