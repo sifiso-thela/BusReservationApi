@@ -12,7 +12,8 @@ namespace BusReservationApi.DB
 
         public DB()
         {
-            string connstring = string.Format("Server={0}; database={1}; UID={2}; password={3}", "192.168.17.238", "bookingapp", "root", "1O5t123#");
+            //string connstring = string.Format("server={0};port={1};uid={2};pwd={3};database={4};SslMode={5}", "localhost","3306","root","1O5t123#", "bookingapp", "none");
+            string connstring = "Persist Security Info=False;database=bookingapp;server=192.168.17.238;Connect Timeout=30;user id=root; pwd=some_pass";
             conn = new MySqlConnection(connstring);
             conn.Open();
         }
