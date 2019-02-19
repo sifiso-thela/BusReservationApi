@@ -6,40 +6,47 @@ using Microsoft.AspNetCore.Mvc;
 using BusReservationApi.Model;
 using BusReservationApi.Service;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace BusReservationApi.Controllers
 {
     [Route("api/[controller]")]
-    public class RentalController : Controller
+    [ApiController]
+    public class ValuesController : ControllerBase
     {
         CustomerService customerService = new CustomerService();
+        
         [HttpGet("all")]
         public IEnumerable<Customer> GetAllCustomers()
         {
             return customerService.getAllCustomers();
         }
+        
+        // GET api/values
+        [HttpGet]
+        public ActionResult<IEnumerable<string>> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
 
-        // GET api/<controller>/5
+        // GET api/values/5
         [HttpGet("{id}")]
-        public Customer GetCustomer(string id)
+        public ActionResult<string> Get(int id)
         {
-            return customerService.getCustomer(id);
+            return "value";
         }
 
-        // POST api/<controller>
+        // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<controller>/5
+        // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<controller>/5
+        // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

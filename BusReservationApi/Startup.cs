@@ -46,6 +46,7 @@ namespace BusReservationApi
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            
         }
     }
 }

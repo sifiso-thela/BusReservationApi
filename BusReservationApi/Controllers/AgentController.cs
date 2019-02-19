@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
+using BusReservationApi.Model;
+using BusReservationApi.Service;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BusReservationApi.Controllers
@@ -11,18 +12,19 @@ namespace BusReservationApi.Controllers
     [Route("api/[controller]")]
     public class AgentController : Controller
     {
-        // GET: api/<controller>
-        [HttpGet]
-        public IEnumerable<string> Get()
+
+        CustomerService customerService = new CustomerService();
+        [HttpGet("all")]
+        public IEnumerable<Customer> GetAllCustomers()
         {
-            return new string[] { "value1", "value2" };
+            return customerService.getAllCustomers();
         }
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Customer GetCustomer(string id)
         {
-            return "value";
+            return customerService.getCustomer(id);
         }
 
         // POST api/<controller>

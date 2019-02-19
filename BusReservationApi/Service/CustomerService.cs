@@ -8,28 +8,35 @@ namespace BusReservationApi.Service
 {
     public class CustomerService : CustomerInterface
     {
-        private List<Customer> customers = new List<Customer>()
-        {
-            new Customer("1", "Name", "Surname", "0659024156", "Next"),
-            new Customer("2", "sam", "khoza", "01234545678", "of"),
-            new Customer("3", "nkosi", "smith", "0974521575", "kin")
-        };
-
+        private List<Customer> customers;
+        /*
         private CustomerContext _context;
-
+        
         public CustomerService(CustomerContext context)
         {
             this._context = context;
             
         }
+        */
+        public CustomerService()
+        {
+            customers = new List<Customer>()
+            {
+                new Customer("1", "Name", "Surname", "0659024156", "Next", "rt"),
+                new Customer("2", "sam", "khoza", "01234545678", "of", "yty"),
+                new Customer("3", "nkosi", "smith", "0974521575", "kin", "u")
+            };
+        }
         public IEnumerable<Customer> getAllCustomers()
         {
-            return this.customers;
+            return customers;
         }
 
         public Customer getCustomer(string id)
         {
-            return this.customers.FirstOrDefault(cust => cust.Id == id);
+              
+           return customers.Where(cust => cust.Id == id).FirstOrDefault();
+
         }
 
         public bool doesCustomerExist(string id)

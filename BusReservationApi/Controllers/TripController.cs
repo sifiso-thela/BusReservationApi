@@ -13,21 +13,19 @@ namespace BusReservationApi.Controllers
     [Route("api/[controller]")]
     public class TripController : Controller
     {
-        CustomerService customerservice;
-        // GET: api/<controller>
-        [HttpGet("/all")]
+        CustomerService customerService = new CustomerService();
+        [HttpGet("all")]
         public IEnumerable<Customer> GetAllCustomers()
         {
-            return customerservice.getAllCustomers();
+            return customerService.getAllCustomers();
         }
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
         public Customer GetCustomer(string id)
         {
-            return customerservice.getCustomer(id);
+            return customerService.getCustomer(id);
         }
-
         // POST api/<controller>
         [HttpPost]
         public void Post([FromBody]string value)
