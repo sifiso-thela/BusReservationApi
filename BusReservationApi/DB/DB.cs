@@ -12,7 +12,7 @@ namespace BusReservationApi.DB
 
         public DB()
         {
-            string connstring = string.Format("Server={0}; database={1}; UID={2}; password={3}", "127.0.0.1", "bookingapp", "root", "1O5t123#");
+            string connstring = string.Format("Server={0}; database={1}; UID={2}; password={3}", "192.168.17.238", "bookingapp", "root", "1O5t123#");
             conn = new MySqlConnection(connstring);
             conn.Open();
         }
