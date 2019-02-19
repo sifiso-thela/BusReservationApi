@@ -19,7 +19,7 @@ namespace BusReservationApi.Controllers
         [HttpGet("all")]
         public IEnumerable<Customer> GetAllCustomers()
         {
-            return customerService.getAllCustomers();
+            return customerService.getAllCustomers();            
         }
 
         [HttpGet("{id}")]
