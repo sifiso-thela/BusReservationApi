@@ -13,8 +13,6 @@ namespace BusReservationApi.Service
         public BusService()
         {
         }
-        //ready for busDAO implementation
-        /*
         public IEnumerable<Bus> GetAllBusses()
         {
             return busDAO.Get();
@@ -25,20 +23,20 @@ namespace BusReservationApi.Service
             return busDAO.Get(id);
         }
         
-        public Bus CreateCustomer(Bus bus)
+        public Bus CreateBus(Bus bus)
         {
             return busDAO.Create(bus);
         }
 
-        public Customer UpdateCustomer(Bus bus)
+        public Bus UpdateBus(Bus bus)
         {
             return busDAO.Update(bus);
         }
 
-        public bool DeleteCustomer(int id)
+        public bool DeleteBus(int id)
         {
             return busDAO.Delete(id);
         }
-        */
+        
     }
 }
