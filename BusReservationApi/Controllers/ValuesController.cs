@@ -13,13 +13,13 @@ namespace BusReservationApi.Controllers
     public class ValuesController : ControllerBase
     {
         CustomerService customerService = new CustomerService();
-        /*
+        
         [HttpGet("all")]
         public IEnumerable<Customer> GetAllCustomers()
         {
             return customerService.getAllCustomers();
         }
-        */
+        
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()

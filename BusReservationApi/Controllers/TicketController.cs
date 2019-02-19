@@ -22,7 +22,7 @@ namespace BusReservationApi.Model
             return customerservice.getAllCustomers();
         }
         [HttpGet("{id}")]
-        public Customer GetCustomer(string id)
+        public Customer GetCustomer(int id)
         {
             return customerservice.getCustomer(id);
         }

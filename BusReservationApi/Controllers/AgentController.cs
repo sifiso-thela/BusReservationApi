@@ -20,7 +20,7 @@ namespace BusReservationApi.Controllers
             return customersirvice.getAllCustomers();
         }
         [HttpGet("{id}")]
-        public  Customer GetCustomer(string id)
+        public  Customer GetCustomer(int id)
         {
             return customersirvice.getCustomer(id);
         }
