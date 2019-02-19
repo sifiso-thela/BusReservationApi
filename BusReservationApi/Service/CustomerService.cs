@@ -14,14 +14,15 @@ namespace BusReservationApi.Service
             new Customer("2", "sam", "khoza", "01234545678", "of"),
             new Customer("3", "nkosi", "smith", "0974521575", "kin")
         };
-
+        /*
         private CustomerContext _context;
-
+        
         public CustomerService(CustomerContext context)
         {
             this._context = context;
             
         }
+        */
         public IEnumerable<Customer> getAllCustomers()
         {
             return this.customers;
