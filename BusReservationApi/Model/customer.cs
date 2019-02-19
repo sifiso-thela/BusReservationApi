@@ -12,5 +12,6 @@ namespace BusReservationApi.Model
         public string Surname { get; set; }
         public string Phone { get; set; }
         public string Next_of_kin { get; set; }
+        public string Next_of_kin_number { get; set; }
     }
 }
