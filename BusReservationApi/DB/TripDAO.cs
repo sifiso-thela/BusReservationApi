@@ -20,28 +20,46 @@ namespace BusReservationApi.DB
         public Trip Create(Trip trip)
         {
             Trip new_trip = new Trip();
-            string query = string.Format("INSERT INTO customer {0}", GenerateInsertString(trip));
-            MySqlDataReader mySqlDataReader = (MySqlDataReader)db.Query(query, "customer");
+            string query = string.Format("INSERT INTO trip {0}", GenerateInsertString(trip));
+            MySqlDataReader mySqlDataReader = (MySqlDataReader)db.Query(query, "trip");
             new_trip = SetTrips(mySqlDataReader)[0];
             return new_trip;
         }
 
-        /*
         public List<Trip> Get()
         {
-
+            List<Trip> trips = new List<Trip>();
+            string query = string.Format("SELECT * FROM trip");
+            MySqlDataReader mySqlDataReader = (MySqlDataReader)db.Query(query, "trip");
+            trips = SetTrips(mySqlDataReader);
+            return trips;
         }
 
         public Trip Get(int id)
         {
-
+            Trip trip = new Trip();
+            string query = string.Format("SELECT * FROM trip WHERE id = {0}", id.ToString());
+            MySqlDataReader mySqlDataReader = (MySqlDataReader)db.Query(query, "trip");
+            if (mySqlDataReader != null)
+            {
+                if (mySqlDataReader.HasRows)
+                {
+                    trip = SetTrips(mySqlDataReader)[0];
+                }
+            }
+            return null;
         }
 
         public Trip Update(Trip trip)
         {
-
+            Trip updatedTrip = new Trip();
+            string query = string.Format("UPDATE trip ", GenerateUpdateString(trip));
+            MySqlDataReader mySqlDataReader = (MySqlDataReader)db.Query(query, "trip");
+            mySqlDataReader.Close();
+            updatedTrip = Get(int.Parse(trip.Id));
+            return updatedTrip;
         }
-    */
+        
         public bool Delete(int id)
         {
             string query = string.Format("DELETE FROM trip WHERE id = ", id.ToString());
@@ -71,10 +89,34 @@ namespace BusReservationApi.DB
             {
                 Trip trip = new Trip
                 {
-
+                    Id = mySqlDataReader.GetString(0),
+                    Bus = new Bus {Id = mySqlDataReader.GetString(1) },
+                    Driver = new Driver { Id =mySqlDataReader.GetString(2) },
+                    Date = mySqlDataReader.GetDateTime(3),
+                    Depature_time = mySqlDataReader.GetDateTime(5),
+                    Arrival_time = mySqlDataReader.GetDateTime(5),
+                    Starting_point = mySqlDataReader.GetString(6),
+                    Destination = mySqlDataReader.GetString(7),
+                    Price = mySqlDataReader.GetFloat(8)
                 };
             }
+            mySqlDataReader.Close();
+            trips = setTripObjects(trips);
             return trips;
+        }
+
+        private List<Trip> setTripObjects(List<Trip> trips)
+        {
+            List<Trip> new_trips = trips;
+            DriverDAO driverDAO = new DriverDAO();
+            BusDAO busDAO = new BusDAO();
+            for (int i = 0; i < trips.Count; i++)
+            {
+                trips[i].Driver = driverDAO.Get(int.Parse(trips[i].Driver.Id));
+                trips[i].Bus = busDAO.Get(int.Parse(trips[i].Bus.Id));
+            }
+
+            return new_trips;
         }
 
         private string GenerateInsertString(Trip trip)

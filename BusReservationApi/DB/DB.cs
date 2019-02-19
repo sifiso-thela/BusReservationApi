@@ -25,6 +25,7 @@ namespace BusReservationApi.DB
             if(!query.Substring(0,1).ToUpper().Contains("D"))
             {
                 if (query.Substring(0, 1).ToUpper().Contains("I")) {
+                    cmd.ExecuteNonQuery();
                     cmd = new MySqlCommand("select LAST_INSERT_ID()", conn);
                     MySqlDataReader mySqlDataReader = cmd.ExecuteReader();
                     mySqlDataReader.Read();
