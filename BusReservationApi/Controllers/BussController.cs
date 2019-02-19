@@ -12,45 +12,36 @@ namespace BusReservationApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomerController : Controller
+    public class BussController : Controller
     {
-
-        CustomerService customerService=new CustomerService();
-
+        BusService busService = new BusService();
+        // GET: api/<controller>
         [HttpGet("all")]
-        public IEnumerable<Customer> GetAllCustomers()
-
-       
+        public IEnumerable<Bus> GetAllBusses()
         {
-            return customerService.getAllCustomers();
+            return busService.GetAllBusses();
         }
-
-        // GET api/<controller>/5
         [HttpGet("{id}")]
-        public Customer Get(int id)
+        public Bus GetBus(int id)
         {
-            return customerService.getCustomer(id);
+            return busService.GetBus(id);
         }
-
         // POST api/<controller>
         [HttpPost]
-        public Customer Post([FromBody]Customer customer)
+        public void Post([FromBody]string value)
         {
-            return customerService.createCustomer(customer);
         }
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public Customer Put(int id, [FromBody]Customer customer)
+        public void Put(int id, [FromBody]string value)
         {
-            return customerService.updateCustomer(customer);
         }
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public bool Delete(int id)
+        public void Delete(int id)
         {
-            return customerService.deleteCustomer(id);
         }
     }
 }

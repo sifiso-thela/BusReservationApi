@@ -25,12 +25,7 @@ namespace BusReservationApi.Service
         {
             return customerDAO.Get(id);
         }
-        /*
-        public bool doesCustomerExist(string id)
-        { 
-            return this.customers.Any(cust => cust.Id == id);
-        }
-        */
+      
         public Customer createCustomer(Customer customer)
         {
             return customerDAO.CreateCustomer(customer);                        
