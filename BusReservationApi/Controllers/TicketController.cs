@@ -7,22 +7,25 @@ using Microsoft.AspNetCore.Mvc;
 using BusReservationApi.Model;
 using BusReservationApi.Service;
 
-namespace BusReservationApi.Controllers
+
+namespace BusReservationApi.Model
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AgentController : ControllerBase
+    public class TicketController : ControllerBase
     {
-        CustomerService customersirvice;
+
+        CustomerService customerservice;
         [HttpGet("/all")]
-        public IEnumerable<Customer> GetAllCustomers()
+        public IEnumerable<Customer> GetALLCustomers()
         {
-            return customersirvice.getAllCustomers();
+            return customerservice.getAllCustomers();
         }
         [HttpGet("{id}")]
-        public  Customer GetCustomer(string id)
+        public Customer GetCustomer(string id)
         {
-            return customersirvice.getCustomer(id);
+            return customerservice.getCustomer(id);
         }
+
     }
 }
