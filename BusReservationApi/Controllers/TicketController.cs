@@ -17,10 +17,10 @@ namespace BusReservationApi.Controllers
         TicketService ticketService = new TicketService();
        
         // GET: api/<controller>
-       // [HttpGet("all")]
-       /* public IEnumerable<Ticket> GetAllTickets()
+      /*  [HttpGet("all")]
+        public IEnumerable<Ticket> GetAllTickets()
         {
-            return ticketService
+            return ticketService.
 
         }
 
@@ -33,20 +33,23 @@ namespace BusReservationApi.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public Ticket Post([FromBody] Ticket value)
         {
+            return ticketService
         }
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public Ticket Put(int id, [FromBody]Ticket value)
         {
+            return ticketService
         }
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
+            return ticketService
         }*/
     }
 }

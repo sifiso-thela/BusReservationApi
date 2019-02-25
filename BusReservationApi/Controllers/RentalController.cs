@@ -12,7 +12,7 @@ namespace BusReservationApi.Controllers
     {
         RentalService rentalService = new RentalService();
         
-       /* [HttpGet("all")]
+      /*[HttpGet("all")]
         public IEnumerable<Rental> GetAllRentals()
         {
             return rentalService.
@@ -27,20 +27,23 @@ namespace BusReservationApi.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public Rental Post([FromBody] Rental  value)
         {
+            return rentalService.
         }
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public Rental Put(int id, [FromBody] Rental value)
         {
+            return rentalService.
         }
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
+            return rentalService.
         }*/
     }
 }

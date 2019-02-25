@@ -30,20 +30,23 @@ namespace BusReservationApi.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public Trip Post([FromBody] Trip value)
         {
+            return tripService.CreateTrip(value);
         }
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public Trip Put(int id, [FromBody] Trip value)
         {
+            return tripService.UpdateTrip(value);
         }
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
+            return tripService.DeleteTrip(id);
         }
     }
 }

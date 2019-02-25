@@ -32,21 +32,24 @@ namespace BusReservationApi.Controllers
 
 
         // POST api/<controller>
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpPost("{id}")]
+        public Driver Post([FromBody]Driver value)
         {
+            return driverService.createDriver(value);
         }
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public Driver Put(int id, [FromBody]Driver value)
         {
+            return driverService.updateDriver(value);
         }
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
+            return driverService.deleteDriver(id);
         }
     }
 }

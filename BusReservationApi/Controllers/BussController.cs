@@ -28,20 +28,24 @@ namespace BusReservationApi.Controllers
         }
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public Bus Post([FromBody]Bus value)
         {
+            return busService.CreateBus(value);
         }
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public Bus Put(int id, [FromBody]Bus value)
         {
+
+            return busService.UpdateBus(value);
         }
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
+            return busService.DeleteBus(id);
         }
     }
 }
