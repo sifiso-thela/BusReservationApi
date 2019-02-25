@@ -11,7 +11,7 @@ namespace BusReservationApi.Service
     {
         TripDAO TripDAO = new TripDAO();
         //Ready for TicketDAO implementation
-        /*
+       
         public TripService()
         {
 
@@ -41,6 +41,6 @@ namespace BusReservationApi.Service
         {
             return TripDAO.Delete(id);
         }
-        */
+        
     }
 }

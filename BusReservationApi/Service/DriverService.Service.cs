@@ -23,7 +23,7 @@ namespace BusReservationApi.Service
 
         public Driver createDriver( Driver driver)
         {
-            return driverDAO.CreateCustomer(driver);
+            return driverDAO.CreateDriver(driver);
         }
 
         public Driver  updateDriver(Driver driver)
