@@ -7,12 +7,12 @@ namespace BusReservationApi.Model
 {
     public class Ticket
     {
-        public string id { get; set; }
+        public string Id { get; set; }
         public Customer customer { get; set; }
         public Trip Trip { get; set; }
         public Agent Agent { get; set; }
         public string seat { get; set; }
-        public DateTime Purchase_time { get; set; }
+        public DateTime Purchase_date { get; set; }
 
     }
 }
