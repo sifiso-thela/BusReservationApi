@@ -14,8 +14,6 @@ namespace BusReservationApi.Service
         public RentalService()
         {
         }
-        //Ready for RentalDAO implementation
-
         /*
         public IEnumerable<Rental> GetAllRentals()
         {

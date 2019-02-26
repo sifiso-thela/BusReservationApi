@@ -14,8 +14,6 @@ namespace BusReservationApi.Service
         public AgentService()
         {
         }
-        //ready for AgentDAO implementation
-        /*
         public IEnumerable<Agent> getAllAgents()
         {
             return agentDAO.Get();
@@ -28,7 +26,7 @@ namespace BusReservationApi.Service
         
         public Agent createCustomer(Agent agent)
         {
-            return agentDAO.Create(agent);
+            return agentDAO.CreateAgent(agent);
         }
 
         public Agent updateCustomer(Agent agent)
@@ -40,6 +38,6 @@ namespace BusReservationApi.Service
         {
             return agentDAO.Delete(id);
         }
-        */
+        
     }
 }

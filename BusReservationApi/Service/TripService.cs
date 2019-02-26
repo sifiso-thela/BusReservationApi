@@ -10,8 +10,6 @@ namespace BusReservationApi.Service
     public class TripService
     {
         TripDAO TripDAO = new TripDAO();
-        //Ready for TicketDAO implementation
-        /*
         public TripService()
         {
 
@@ -19,7 +17,14 @@ namespace BusReservationApi.Service
         
         public IEnumerable<Trip> GetAllTrip()
         {
-            return TripDAO.Get();
+            try
+            {
+                return TripDAO.Get();
+            }catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            
         }
 
         public Trip GetTrip(int id)
@@ -41,6 +46,6 @@ namespace BusReservationApi.Service
         {
             return TripDAO.Delete(id);
         }
-        */
+        
     }
 }
