@@ -15,8 +15,6 @@ namespace BusReservationApi.Service
         {
 
         }
-        //Ready for TicketDAO implementation
-
         /*
         public IEnumerable<Ticket> GetAllTicket()
         {

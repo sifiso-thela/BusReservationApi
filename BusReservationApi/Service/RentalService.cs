@@ -14,7 +14,6 @@ namespace BusReservationApi.Service
         public RentalService()
         {
         }
-        /*
         public IEnumerable<Rental> GetAllRentals()
         {
             return rentalDAO.Get();
@@ -27,7 +26,7 @@ namespace BusReservationApi.Service
 
         public Rental CreateRental(Rental rental)
         {
-            return rentalDAO.Create(rental);
+            return rentalDAO.CreateRental(rental);
         }
 
         public Rental UpdateRental(Rental rental)
@@ -39,6 +38,6 @@ namespace BusReservationApi.Service
         {
             return rentalDAO.Delete(id);
         }
-        */
+        
     }
 }
