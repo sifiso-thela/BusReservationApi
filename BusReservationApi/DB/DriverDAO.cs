@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+
 namespace BusReservationApi.DB
 {
     public class DriverDAO
@@ -15,7 +16,7 @@ namespace BusReservationApi.DB
         {
             db = new DB();
         }
-        public Driver CreateCustomer(Driver driver)
+        public Driver CreateDriver(Driver driver)
         {
             string query = string.Format("INSERT INTO driver {0}", GenerateInsertString(driver));
             MySqlDataReader mySqlDataReader = (MySqlDataReader)db.Query(query, "driver");

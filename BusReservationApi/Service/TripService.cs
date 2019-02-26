@@ -10,6 +10,11 @@ namespace BusReservationApi.Service
     public class TripService
     {
         TripDAO TripDAO = new TripDAO();
+<<<<<<< HEAD
+=======
+        //Ready for TicketDAO implementation
+       
+>>>>>>> 5e82449416c0eec05f715f141ebac4722f04ae47
         public TripService()
         {
 

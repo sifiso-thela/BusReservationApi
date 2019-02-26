@@ -3,49 +3,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using BusReservationApi.Service;
+using BusReservationApi.DB;
 using BusReservationApi.Model;
+using BusReservationApi.Service;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BusReservationApi.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class BussController : Controller
+    public class DriverController : Controller
     {
-        BusService busService = new BusService();
+        DriverService driverService = new DriverService();
+
         // GET: api/<controller>
         [HttpGet("all")]
-        public IEnumerable<Bus> GetAllBusses()
+        public IEnumerable<Driver> GetAllDrivers()
         {
-            return busService.GetAllBusses();
+            return driverService.GetAllDrivers();
         }
+
         [HttpGet("{id}")]
-        public Bus GetBus(int id)
+        public Driver GetDriver(int id)
         {
-            return busService.GetBus(id);
+            return driverService.GetDriver(id);
         }
+        
+
+
         // POST api/<controller>
-        [HttpPost]
-        public Bus Post([FromBody]Bus value)
+        [HttpPost("{id}")]
+        public Driver Post([FromBody]Driver value)
         {
-            return busService.CreateBus(value);
+            return driverService.createDriver(value);
         }
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public Bus Put(int id, [FromBody]Bus value)
+        public Driver Put(int id, [FromBody]Driver value)
         {
-
-            return busService.UpdateBus(value);
+            return driverService.updateDriver(value);
         }
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
         public bool Delete(int id)
         {
-            return busService.DeleteBus(id);
+            return driverService.deleteDriver(id);
         }
     }
 }
